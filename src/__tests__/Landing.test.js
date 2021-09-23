@@ -125,7 +125,7 @@ describe("Landing Page", () => {
       expect(nextButton).toBeInTheDocument();
     });
 
-    it("should render previous button with disable prop", async () => {
+    it("should render previous button disabled", async () => {
       render(<Landing />);
 
       const prevButton = await screen.findByTestId(/previous-button/i);
