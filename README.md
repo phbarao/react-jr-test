@@ -16,6 +16,8 @@ You can test:
 
 # New features to implement:
 
+[X] Write some tests;
+
 [ ] Turn buttons into a component;
 
 [ ] Create context to share data;
