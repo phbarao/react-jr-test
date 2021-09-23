@@ -12,7 +12,10 @@ You can test:
 
 # New features to implement:
 
-[] Turn buttons into a component;
-[] Create context to share data;
-[] Performaces tests and improvements;
-[] E2E Testing;
+[ ] Turn buttons into a component;
+
+[ ] Create context to share data;
+
+[ ] Performaces tests and improvements;
+
+[ ] E2E Testing;
