@@ -1,8 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 
 import { Container, Content } from "./styles";
 
-function Header({ title }) {
+function HeaderComponent({ title }) {
   return (
     <Container>
       <Content>
@@ -12,4 +12,5 @@ function Header({ title }) {
   );
 }
 
+const Header = memo(HeaderComponent);
 export default Header;
