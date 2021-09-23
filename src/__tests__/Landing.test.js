@@ -2,8 +2,8 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
 
-import Main from "../index";
-import Header from "../../../components/Header";
+import Landing from "../pages/Landing";
+import Header from "../components/Header";
 
 jest.mock("axios", () => ({
   __esModule: true,
@@ -77,15 +77,15 @@ jest.mock("axios", () => ({
   },
 }));
 
-const MockedMain = () => {
+const MockedLanding = () => {
   return (
     <BrowserRouter>
-      <Main />
+      <Landing />
     </BrowserRouter>
   );
 };
 
-describe("Main Page", () => {
+describe("Landing Page", () => {
   describe("Header Component", () => {
     it("should render Header component with the title passed on prop", () => {
       render(<Header title="Lista de Pokemons" />);
@@ -96,9 +96,9 @@ describe("Main Page", () => {
     });
   });
 
-  describe("Main list", () => {
+  describe("Pokemons list", () => {
     it("should render twenty pokemon names", async () => {
-      render(<MockedMain />);
+      render(<MockedLanding />);
 
       const pokemonItem = await screen.findAllByTestId(/pokemon-item/i);
 
@@ -108,7 +108,7 @@ describe("Main Page", () => {
 
   describe("Pagination", () => {
     it("should render page number and start with number 1", async () => {
-      render(<Main />);
+      render(<Landing />);
 
       const firstPage = await screen.findByTestId("page-number");
 
@@ -116,7 +116,7 @@ describe("Main Page", () => {
     });
 
     it("should render pagination buttons", async () => {
-      render(<Main />);
+      render(<Landing />);
 
       const prevButton = await screen.findByText("Anterior");
       const nextButton = await screen.findByText("Próxima");
@@ -126,14 +126,14 @@ describe("Main Page", () => {
     });
 
     it("should render previous button with disable prop", async () => {
-      render(<Main />);
+      render(<Landing />);
 
       const prevButton = await screen.findByTestId(/previous-button/i);
       expect(prevButton.disabled).toBeTruthy();
     });
 
     it("should enable previous button after first click on next button", async () => {
-      render(<Main />);
+      render(<Landing />);
 
       const nextButton = await screen.findByText("Próxima");
       userEvent.click(nextButton);
@@ -143,7 +143,7 @@ describe("Main Page", () => {
     });
 
     it("should add 1 when clicked on next button", async () => {
-      render(<Main />);
+      render(<Landing />);
 
       const pageBeforeClick = await screen.findByTestId("page-number");
       expect(pageBeforeClick).toHaveTextContent("1");
@@ -156,7 +156,7 @@ describe("Main Page", () => {
     });
 
     it("should subtract 1 when clicked on previous button", async () => {
-      render(<Main />);
+      render(<Landing />);
 
       const pageBeforeClick = await screen.findByTestId("page-number");
       expect(pageBeforeClick).toHaveTextContent("1");

@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import Header from "../../components/Header";
-
 import { Container, Content, Pagination } from "./styles";
 
-function MainList() {
+function Landing() {
   const [pokemonsList, setPokemonsList] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
   const [offset, setOffset] = useState(0);
@@ -73,4 +72,4 @@ function MainList() {
   );
 }
 
-export default MainList;
+export default Landing;
