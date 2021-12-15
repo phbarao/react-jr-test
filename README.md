@@ -1,4 +1,4 @@
-# React Jr. Testing
+# React Jr. Test
 
 > I've heard about a junior react test that asks to consume data from [pokeapi](https://pokeapi.co/), list 20 pokemons names per page and create previous/next buttons for navigation. So I decided to implement that challenge with some extra features, starting by tests.
 
