@@ -18,6 +18,8 @@ You can test:
 
 ✔︎ Write some tests;
 
+✔︎ Responsiveness;
+
 ⏱ Turn buttons into a component;
 
 ⏱ Create context to share data;
